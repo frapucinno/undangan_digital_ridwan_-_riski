@@ -1,0 +1,158 @@
+/* Mengatur keseluruhan tampilan halaman */
+body {
+    background-color: #fff8e7;    /* Warna latar belakang (cream) */
+    font-family: sans-serif;      /* Jenis huruf tanpa kait */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+.hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+/* Gaya untuk judul utama */
+h1 {
+    font-size: 48px;
+    color: #5e3023;
+    margin-top: 60px;
+  }
+  
+/* Gaya untuk paragraf */
+p {
+    font-size: 20px;
+    color: #3a3a3a;
+    margin-top: 10px;
+  }
+    
+.panah {
+    font-size: 32px;
+    animation: lompat 1.5s infinite;
+    margin-top: 10px;
+  }
+  
+@keyframes lompat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+    100% { transform: translateY(0); }
+  }
+  
+.spasi-scroll {
+    height: 70vh; /* 100% tinggi layar */
+  }
+
+.scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    text-align: center;
+    color: #5e3023;
+    font-size: 18px;
+    animation: muncul 2s ease-out;
+  }
+
+  /* Bagian Detail Acara */
+.detail-acara {
+    background-color: #fdf5e6;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 600px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+    display: block ; /* Pastikan bukan flex */
+    box-sizing: border-box;
+  }
+  
+.detail-acara h2 {
+    font-size: 32px;
+    color: #5e3023;
+    margin-bottom: 20px;
+  }
+  
+.detail-acara p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+.acara {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffaf4;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+  
+  .kutipan, .galeri {
+    padding: 80px 16px;
+    text-align: center;
+  }
+  .kutipan h3 {
+    font-style: italic;
+    color: #5e3023;
+  }
+  
+  .fade-right img {
+    max-width: 500px;
+    height: auto;
+    max-height: 500px; /* atau sesuai kebutuhan */
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 600px) {
+    .fade-right img{
+      max-height: 300px;
+      max-width: 300px;
+    }
+  }
+
+  .galeri-statis {
+    padding: 60px 16px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .galeri-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  /* Gambar default */
+  .galeri-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  .galeri-grid img:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Horizontal gambar: lebar → penuh baris */
+  .galeri-grid img.horizontal {
+    grid-column: span 2;
+  }
+  
+  /* Responsive khusus untuk HP kecil */
+  @media (max-width: 500px) {
+    .galeri-grid {
+      grid-template-columns: 1fr;
+    }
+    .galeri-grid img.horizontal {
+      grid-column: span 1;
+    }
+  }
+  
