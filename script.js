@@ -1,21 +1,5 @@
 // Animasi: buat teks muncul perlahan dari bawah
 gsap.registerPlugin(ScrollTrigger);
-
-gsap.from(".fade-left", {
-    scrollTrigger: ".fade-left",
-    x: -100,
-    opacity: 0,
-    duration: 2,
-    ease: "power2.out"
-  });
-  
-  gsap.from(".fade-right", {
-    scrollTrigger: ".fade-right",
-    x: 100,
-    opacity: 0,
-    duration: 2,
-    ease: "power2.out"
-  });
   
   gsap.from(".keterangan1", {
     y: 50,           // geser dari bawah 50px
@@ -38,7 +22,7 @@ gsap.from(".fade-left", {
   });
   
   gsap.from(".acara", {
-    scrollTrigger: ".acara", // elemen yang memicu
+    scrollTrigger: ".detail-acara", // elemen yang memicu
     y: 50,
     opacity: 0,
     duration: 2.5,
@@ -53,7 +37,7 @@ gsap.from(".fade-left", {
   
   gsap.to(".scroll-hint", {
     scrollTrigger: {
-      trigger: ".acara", // ketika bagian acara muncul
+      trigger: ".detail-acara", // ketika bagian acara muncul
       start: "top 80%",
       once: true
       
@@ -63,6 +47,23 @@ gsap.from(".fade-left", {
     pointerEvents: "none"
   });
 
+gsap.from(".fade-left", {
+    scrollTrigger: ".fade-left",
+    x: -100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out"
+  });
+  
+  gsap.from(".fade-right", {
+    scrollTrigger: ".fade-right",
+    x: 100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out"
+  });
+  
+  
 const sliderContainer = document.querySelector(".slider-container");
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
